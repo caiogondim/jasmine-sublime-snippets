@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[expect($1).toBeLessThan($2);$0]]>
+	</content>
+	<tabTrigger><![CDATA[tblt]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>toBeLessThan</description>
+</snippet>

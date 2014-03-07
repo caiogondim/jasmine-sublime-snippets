@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[expect($1).toBeNull();$0]]>
+	</content>
+	<tabTrigger><![CDATA[tbn]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>toBeNull</description>
+</snippet>
