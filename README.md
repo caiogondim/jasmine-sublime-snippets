@@ -9,7 +9,20 @@
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur repudiandae
 nisi iusto molestiae temporibus eveniet excepturi recusandae nam sint facilis.
-Non, sed velit sit nulla accusantium dolores repellendus quaerat adipisci!
+Non, sed velit sit nulla accusantium dolores repellendus quaerat adipisci! Lorem
+ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, saepe
+necessitatibus voluptate explicabo eum expedita ipsam voluptates rerum aliquam
+iste nobis debitis accusantium minus dolores asperiores tempora architecto?
+Magni, at!
+
+
+## Demo
+
+Some of the snippets in the wild.
+
+<img
+  src="https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/demo.gif"
+/>
 
 
 ## License
