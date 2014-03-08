@@ -4,7 +4,7 @@ beforeEach(function() {
 	$1
 });]]>
 	</content>
-	<tabTrigger><![CDATA[beach]]></tabTrigger>
+	<tabTrigger><![CDATA[be]]></tabTrigger>
 	<scope>source.js</scope>
 	<description>beforeEach</description>
 </snippet>

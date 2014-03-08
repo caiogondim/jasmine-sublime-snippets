@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[expect($1).not.toBeUndefined();$0]]>
 	</content>
-	<tabTrigger><![CDATA[ntbu]]></tabTrigger>
+	<tabTrigger><![CDATA[nu]]></tabTrigger>
 	<scope>source.js</scope>
 	<description>not.toBeUndefined</description>
 </snippet>

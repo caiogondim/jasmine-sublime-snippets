@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[${1:spy}.calls.first()]]>
+	</content>
+	<tabTrigger><![CDATA[cf]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>spy.calls.first</description>
+</snippet>

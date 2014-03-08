@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[expect($1).not.toBeTruthy();$0]]>
 	</content>
-	<tabTrigger><![CDATA[ntbt]]></tabTrigger>
+	<tabTrigger><![CDATA[nt]]></tabTrigger>
 	<scope>source.js</scope>
 	<description>not.toBeTruthy</description>
 </snippet>

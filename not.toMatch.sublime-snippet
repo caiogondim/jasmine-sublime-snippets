@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[expect($1).not.toMatch($2);$0]]>
 	</content>
-	<tabTrigger><![CDATA[ntm]]></tabTrigger>
+	<tabTrigger><![CDATA[nm]]></tabTrigger>
 	<scope>source.js</scope>
 	<description>not.toMatch</description>
 </snippet>

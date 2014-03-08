@@ -4,7 +4,7 @@ afterEach(function() {
 	$1
 });]]>
 	</content>
-	<tabTrigger><![CDATA[aeach]]></tabTrigger>
+	<tabTrigger><![CDATA[ae]]></tabTrigger>
 	<scope>source.js</scope>
 	<description>afterEach</description>
 </snippet>
