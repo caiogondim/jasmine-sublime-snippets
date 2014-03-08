@@ -7,13 +7,15 @@
   width="256"
 />
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur repudiandae
-nisi iusto molestiae temporibus eveniet excepturi recusandae nam sint facilis.
-Non, sed velit sit nulla accusantium dolores repellendus quaerat adipisci! Lorem
-ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, saepe
-necessitatibus voluptate explicabo eum expedita ipsam voluptates rerum aliquam
-iste nobis debitis accusantium minus dolores asperiores tempora architecto?
-Magni, at!
+Jasmine is a behavior-driven development framework for testing JavaScript code.
+It does not depend on any other JavaScript frameworks. It does not require a
+DOM. And it has a clean, obvious syntax so that you can easily write tests. This
+package is for Jasmine **version 2.0.0**.
+
+To install through Package Control, search for **Jasmine**. If you
+still don't have Package Control in Sublime Text, go get it. If you insist to
+not install it, you can download the package and put it manually inside your
+Pacakages directory. It should work but will not update automatically.
 
 
 ## Demo
