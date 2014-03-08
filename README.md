@@ -27,6 +27,69 @@ Some of the snippets in the wild.
 />
 
 
+## Snippets
+
+### Specs
+- `describe`: desc⇥
+- `it`: it⇥
+- `afterEach`: ae⇥
+- `beforeEach`: be⇥
+
+### Expectations
+- `expect`: exp⇥
+
+- `expect().toBe`: tb⇥
+- `expect().toBeCloseTo`: tbct⇥
+- `expect().toBeDefined`: tbd⇥
+- `expect().toBeFalsy`: tbf⇥
+- `expect().toBeGreaterThan`: tbgt⇥
+- `expect().toBeLessThan`: tblt⇥
+- `expect().toBeNull`: tbn⇥
+- `expect().toBeTruthy`: tbt⇥
+- `expect().toBeUndefined`: tbu⇥
+- `expect().toContain`: tc⇥
+- `expect().toEqual`: te⇥
+- `expect().toHaveBeenCalled`: thbc⇥
+- `expect().toHaveBeenCalledWith`: thbcw⇥
+- `expect().toMatch`: tm⇥
+- `expect().toThrow`: tt⇥
+
+- `expect().not.toBe`: nb⇥
+- `expect().not.toBeCloseTo`: nct⇥
+- `expect().not.toBeDefined`: nd⇥
+- `expect().not.toBeFalsy`: nf⇥
+- `expect().not.toBeGreaterThan`: ngt⇥
+- `expect().not.toBeLessThan`: nlt⇥
+- `expect().not.toBeNull`: nn⇥
+- `expect().not.toBeTruthy`: nt⇥
+- `expect().not.toBeUndefined`: nu⇥
+- `expect().not.toContain`: nc⇥
+- `expect().not.toEqual`: ne⇥
+- `expect().not.toMatch`: nm⇥
+- `expect().not.toThrow`: nt⇥
+
+- `jasmine.any`: a⇥
+- `jasmine.objectContaining`: oc⇥
+
+### Spies
+- `spyOn`: s⇥
+- `spyOn.and.callThrough`: sct⇥
+- `spyOn.and.returnValue`: srv⇥
+- `spyOn.and.stub`: ss⇥
+- `spyOn.and.throwError`: se⇥
+
+- `spy.calls.all`: ca⇥
+- `spy.calls.allArgs`: caa⇥
+- `spy.calls.any`: ca⇥
+- `spy.calls.argsFor`: caf⇥
+- `spy.calls.count`: cc⇥
+- `spy.calls.first`: cf⇥
+- `spy.calls.mostRecent`: cmr⇥
+- `spy.calls.reset`: cr⇥
+- `createSpy`: cs⇥
+- `createSpyObj`: cso⇥
+
+
 ## License
 The MIT License (MIT)
 
