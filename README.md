@@ -29,6 +29,9 @@ Some of the snippets in the wild.
 
 ## Snippets
 
+Below is a list of all snippets currently supported on this package and the
+triggers of each one. The **⇥** means the `TAB` key.
+
 ### Specs
 - `describe`: desc⇥
 - `it`: it⇥
