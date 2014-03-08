@@ -37,7 +37,6 @@ Some of the snippets in the wild.
 
 ### Expectations
 - `expect`: exp⇥
-
 - `expect().toBe`: tb⇥
 - `expect().toBeCloseTo`: tbct⇥
 - `expect().toBeDefined`: tbd⇥
@@ -53,7 +52,6 @@ Some of the snippets in the wild.
 - `expect().toHaveBeenCalledWith`: thbcw⇥
 - `expect().toMatch`: tm⇥
 - `expect().toThrow`: tt⇥
-
 - `expect().not.toBe`: nb⇥
 - `expect().not.toBeCloseTo`: nct⇥
 - `expect().not.toBeDefined`: nd⇥
@@ -67,7 +65,6 @@ Some of the snippets in the wild.
 - `expect().not.toEqual`: ne⇥
 - `expect().not.toMatch`: nm⇥
 - `expect().not.toThrow`: nt⇥
-
 - `jasmine.any`: a⇥
 - `jasmine.objectContaining`: oc⇥
 
@@ -77,7 +74,6 @@ Some of the snippets in the wild.
 - `spyOn.and.returnValue`: srv⇥
 - `spyOn.and.stub`: ss⇥
 - `spyOn.and.throwError`: se⇥
-
 - `spy.calls.all`: ca⇥
 - `spy.calls.allArgs`: caa⇥
 - `spy.calls.any`: ca⇥
