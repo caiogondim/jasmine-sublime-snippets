@@ -1,11 +1,6 @@
-# Jasmine snippets <img src="https://api.travis-ci.org/caiogondim/jasmine-sublime-snippets.png?branch=master">
+# Jasmine snippets ![](https://api.travis-ci.org/caiogondim/jasmine-sublime-snippets.png?branch=master)
 
-<img
-  src="https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/logo.png"
-  alt="Jasmine snippets logo"
-  align="right"
-  width="256"
-/>
+<img src="https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/logo.png" alt="Jasmine snippets logo" align="right" width="256">
 
 Jasmine is a behavior-driven development framework for testing JavaScript code.
 It does not depend on any other JavaScript frameworks. It does not require a
@@ -22,9 +17,7 @@ Pacakages directory. It should work but will not update automatically.
 
 Some of the snippets in the wild.
 
-<img
-  src="https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/demo.gif"
-/>
+![](https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/demo.gif)
 
 
 ## Snippets
