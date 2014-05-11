@@ -1,4 +1,4 @@
-# Jasmine snippets ![](https://api.travis-ci.org/caiogondim/jasmine-sublime-snippets.png?branch=master)
+# Jasmine snippets [![Build Status](https://api.travis-ci.org/caiogondim/jasmine-sublime-snippets.png?branch=master)](https://travis-ci.org/caiogondim/jasmine-sublime-snippets)
 
 <img src="https://raw.github.com/caiogondim/jasmine-sublime-snippets/master/img/logo.png" alt="Jasmine snippets logo" align="right" width="256">
 
