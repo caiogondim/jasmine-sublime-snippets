@@ -3,7 +3,6 @@
   "scopeName": "source.syntax_name",
   "fileTypes": ["spec.js"],
   "scopeName": "source.js.jasmine",
-  // According to the docs the following is ignored, used in TextMate. Added for completion sake
   "foldingStartMarker": "^.*\\bfunction\\s*(\\w+\\s*)?\\([^\\)]*\\)(\\s*\\{[^\\}]*)?\\s*$",
   "foldingStopMarker": "^\\s*\\}",
   "keyEquivalent": "^~J",
@@ -11,6 +10,20 @@
   "uuid": "03a4ea4f-bd92-4d51-b7aa-70b12bbdc854",
 
   "patterns": [
-    { "include": "source.js" }
+    {
+      "include": "source.js"
+    },
+    {
+      "match": "(describe)\\((\"\\w\")*(,\\s\\w+)?",
+        "captures": {
+          "1": { "name": "storage.type.js" }
+        }
+    },
+    {
+      "match": "(it)\\((\"\\w\")*(,\\s\\w+)?",
+        "captures": {
+          "1": { "name": "storage.type.js" }
+        }
+    }
   ]
 }
