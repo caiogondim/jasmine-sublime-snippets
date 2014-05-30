@@ -1,8 +1,7 @@
 {
   "name": "Jasmine",
-  "scopeName": "source.syntax_name",
-  "fileTypes": ["spec.js"],
   "scopeName": "source.js.jasmine",
+  "fileTypes": ["spec.js"],
   "foldingStartMarker": "^.*\\bfunction\\s*(\\w+\\s*)?\\([^\\)]*\\)(\\s*\\{[^\\}]*)?\\s*$",
   "foldingStopMarker": "^\\s*\\}",
   "keyEquivalent": "^~J",
@@ -14,13 +13,13 @@
       "include": "source.js"
     },
     {
-      "match": "(describe)\\((\"\\w\")*(,\\s\\w+)?",
+      "match": "^\\s*(x?describe)\\(",
         "captures": {
           "1": { "name": "storage.type.js" }
         }
     },
     {
-      "match": "(it)\\((\"\\w\")*(,\\s\\w+)?",
+      "match": "^\\s*(x?it)\\(",
         "captures": {
           "1": { "name": "storage.type.js" }
         }

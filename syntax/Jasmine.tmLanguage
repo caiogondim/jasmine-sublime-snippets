@@ -30,7 +30,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(describe)\(("\w")*(,\s\w+)?</string>
+			<string>^\s*(x?describe)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -42,7 +42,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(it)\(("\w")*(,\s\w+)?</string>
+			<string>^\s*(x?it)\(</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
