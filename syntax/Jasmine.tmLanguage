@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>spec.js</string>
+	</array>
+	<key>foldingStartMarker</key>
+	<string>^.*\bfunction\s*(\w+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*\}</string>
+	<key>keyEquivalent</key>
+	<string>^~J</string>
+	<key>name</key>
+	<string>Jasmine</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>source.js</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.js</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(x?describe)\(</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.js</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(x?it)\(</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.js.jasmine</string>
+	<key>uuid</key>
+	<string>03a4ea4f-bd92-4d51-b7aa-70b12bbdc854</string>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+{
+  "name": "Jasmine",
+  "scopeName": "source.js.jasmine",
+  "fileTypes": ["spec.js"],
+  "foldingStartMarker": "^.*\\bfunction\\s*(\\w+\\s*)?\\([^\\)]*\\)(\\s*\\{[^\\}]*)?\\s*$",
+  "foldingStopMarker": "^\\s*\\}",
+  "keyEquivalent": "^~J",
+
+  "uuid": "03a4ea4f-bd92-4d51-b7aa-70b12bbdc854",
+
+  "patterns": [
+    {
+      "include": "source.js"
+    },
+    {
+      "match": "^\\s*(x?describe)\\(",
+        "captures": {
+          "1": { "name": "storage.type.js" }
+        }
+    },
+    {
+      "match": "^\\s*(x?it)\\(",
+        "captures": {
+          "1": { "name": "storage.type.js" }
+        }
+    }
+  ]
+}
