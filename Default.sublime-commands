@@ -1,0 +1,7 @@
+[
+    {
+        "caption": "Jasmine: Switch between code and spec",
+        "command": "jasmine_toggle",
+        "args": { "split_view": false } 
+    }
+]
