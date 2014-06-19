@@ -1,3 +1,4 @@
+# Huge thanks to RubyTests( https://github.com/maltize/sublime-text-2-ruby-tests )
 import sublime, sublime_plugin
 import re
 import os
@@ -5,12 +6,12 @@ import functools
 
 class JasmineToggleCommand(sublime_plugin.TextCommand):  
     def run(self, edit, split_view = False):
-        self.settings = sublime.load_settings("JasmineCommands.sublime-settings")
+        self.load_settings()
 
         file_type = self.file_type()
 
         if not file_type:
-            sublime.error_message("Only js files are supported")
+            sublime.error_message("Jasmine BDD: Only js files are supported!")
             return
 
         possible_alternates = file_type.possible_alternate_files()
@@ -30,7 +31,11 @@ class JasmineToggleCommand(sublime_plugin.TextCommand):
                 callback = functools.partial(self.on_selected, alternates)
                 self.window().show_quick_panel(alternates, callback)
         else:
-            sublime.error_message("File not found")
+            sublime.error_message("Jasmine BDD: File not found")
+
+    def load_settings(self):
+        settings = sublime.load_settings("Jasmine_BDD.sublime-settings")
+        self.ignored_directories = settings.get("ignored_directories")
 
     def file_type(self):
         file_name = self.view.file_name()
@@ -50,7 +55,7 @@ class JasmineToggleCommand(sublime_plugin.TextCommand):
 
     def walk(self, directory):
         for dir, dirnames, files in os.walk(directory):
-            dirnames[:] = [dirname for dirname in dirnames if dirname]
+            dirnames[:] = [dirname for dirname in dirnames if dirname not in self.ignored_directories]
             yield dir, dirnames, files
 
     def window(self):

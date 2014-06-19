@@ -1,2 +1,22 @@
 [
+    {
+        "keys": ["ctrl+period"],
+        "command": "jasmine_toggle",
+        "args": {"split_view": false},
+        "context": [{
+            "key": "selector", "operator": "equal",
+            "operand": "source.js, source.spec.js"
+        }]
+    },
+
+    // Split view
+    { 
+        "keys": ["ctrl+alt+period"],
+        "command": "jasmine_toggle",
+        "args": {"split_view": true},
+        "context": [{ 
+            "key": "selector", "operator": "equal",
+            "operand": "source.js, source.spec.js"
+        }]
+    }
 ]

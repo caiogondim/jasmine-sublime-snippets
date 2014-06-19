@@ -1,0 +1,3 @@
+{
+    "ignored_directories": [".git", "vendor", "tmp", "node_modules"]
+}
