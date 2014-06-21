@@ -1,3 +1,7 @@
 {
-    "ignored_directories": [".git", "vendor", "tmp", "node_modules"]
+    // Ignore directories when searching for files (source and specs)
+    "ignored_directories": [".git", "vendor", "tmp", "node_modules"],
+
+    // The parent folder name for the spec files
+    "jasmine_path": "spec"
 }

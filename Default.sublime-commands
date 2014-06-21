@@ -3,5 +3,10 @@
         "caption": "Jasmine: Switch between code and spec",
         "command": "jasmine_toggle",
         "args": { "split_view": false } 
+    },
+    {
+        "caption": "Jasmine: Create spec file",
+        "command": "jasmine_create_spec",
+        "args": { "split_view": false } 
     }
 ]
