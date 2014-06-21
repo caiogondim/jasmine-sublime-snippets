@@ -11,7 +11,6 @@ class JasmineToggleCommand(sublime_plugin.TextCommand):
         file_type = self.file_type()
 
         if not file_type:
-            sublime.error_message("Jasmine BDD: Only js files are supported!")
             return
 
         possible_alternates = file_type.possible_alternate_files()
@@ -31,7 +30,7 @@ class JasmineToggleCommand(sublime_plugin.TextCommand):
                 callback = functools.partial(self.on_selected, alternates)
                 self.window().show_quick_panel(alternates, callback)
         else:
-            sublime.error_message("Jasmine BDD: File not found")
+            SpecFileInterface(self, split_view).interact()
 
     def load_settings(self):
         settings = sublime.load_settings("Jasmine_BDD.sublime-settings")
@@ -103,3 +102,102 @@ class JasmineFile(BaseFile):
     @classmethod
     def test(cls, file_name):
         return re.search('\w+\.spec.js', file_name) or re.search('\w+\_spec.js', file_name)
+
+
+class SpecFileInterface:
+    relative_paths = []
+    full_torelative_paths = {}
+    rel_path_start = 0
+
+    def __init__(self, command, split_view):
+        self.ignored_directories = command.ignored_directories
+        self.window = command.window()
+        self.current_file = command.view.file_name()
+        self.split_view = split_view
+
+    def interact(self):
+        self.build_relative_paths()
+        self.window.show_quick_panel(self.relative_paths, self.dir_selected)
+
+    def build_relative_paths(self):
+        folders = self.active_project(self.window.folders())
+        view = self.window.active_view()
+        self.relative_paths = []
+        self.full_torelative_paths = {}
+        # TODO: refactor!
+        for path in folders:
+            rootfolders = os.path.split(path)[-1]
+            self.rel_path_start = len(os.path.split(path)[0]) + 1
+            if self.is_valid_path(path):
+                self.full_torelative_paths[rootfolders] = path
+                self.relative_paths.append(rootfolders)
+
+            for base, dirs, files in os.walk(path):
+                for ignored_dir in self.ignored_directories:
+                    if ignored_dir in dirs:
+                        dirs.remove(ignored_dir)
+                for dir in dirs:
+                    relative_path = os.path.join(base, dir)[self.rel_path_start:]
+                    if self.is_valid_path(relative_path):
+                        self.full_torelative_paths[relative_path] = os.path.join(base, dir)
+                        self.relative_paths.append(relative_path)
+
+    def active_project(self, folders):
+        for folder in folders:
+            project_name = os.path.split(folder)[-1]
+            if re.search(project_name, self.current_file):
+                return [folder]
+        return folders
+
+    def is_valid_path(self, path):
+        if not re.search("spec", self.current_file): # TODO: jasmine_path setting 
+            return re.search("spec", path)
+        return True
+
+    def dir_selected(self, selected_index):
+        if selected_index != -1:
+            self.selected_dir = self.relative_paths[selected_index]
+            self.selected_dir = self.full_torelative_paths[self.selected_dir]
+            self.window.show_input_panel("File name", self.suggest_file_name(self.selected_dir), self.file_name_input, None, None)
+
+    def suggest_file_name(self, path):
+        current_file = os.path.split(self.current_file)[-1]
+        return self.set_file_name(path, current_file)
+
+    def set_file_name(self, path, current_file):
+        if re.search("spec", self.current_file): # TODO: jasmine_path setting
+            return re.sub('.spec.js|_spec.js', '.js', current_file)
+        else:
+            return current_file.replace('.js', '.spec.js') # TODO: file_extension setting
+
+    def file_name_input(self, file_name):
+        full_path = os.path.join(self.selected_dir, file_name)
+
+        if os.path.lexists(full_path):
+            self.window.open_file(full_path)
+            return
+        else:
+            self.create_and_open_file(full_path)
+
+    def create_and_open_file(self, path):
+        if not os.path.exists(path):
+            self.create(path)
+
+        if self.split_view:
+            ShowPanels(self.window).split()
+
+        with open(path, 'w') as f:
+            f.write("")
+        view = self.window.open_file(path)
+        sublime.set_timeout(lambda: view.run_command("insert_snippet", { "name": "Packages/Jasmine BDD/snippets/describe.sublime-snippet" }), 0)
+
+    def create(self, filename):
+        base, filename = os.path.split(filename)
+        self.create_folder(base)
+
+    def create_folder(self, base):
+        if not os.path.exists(base):
+            parent = os.path.split(base)[0]
+            if not os.path.exists(parent):
+                self.create_folder(parent)
+            os.mkdir(base)
