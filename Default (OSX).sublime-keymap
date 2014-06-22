@@ -10,11 +10,11 @@
     },
 
     // Split view
-    { 
+    {
         "keys": ["super+ctrl+period"],
         "command": "jasmine_toggle",
         "args": {"split_view": true},
-        "context": [{ 
+        "context": [{
             "key": "selector", "operator": "equal",
             "operand": "source.js, source.spec.js"
         }]

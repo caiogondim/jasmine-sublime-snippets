@@ -97,6 +97,35 @@ this package directly to
 and see the changes everytime you save a file.
 
 
+## Commands
+
+### Toggle between code and spec
+
+This command will open the spec or source file that has the same path of the active view file. If you're looking at a source file and the package can't find any specs, it'll display a list of possible directories to create a new one.
+
+To run this command, you can use `ctrl+.` or `ctrl+shift+.` (this last one will toggle using a split view), or select `Jasmine BDD: Switch between code and spec`.
+
+### Create spec file
+
+This command is exactly the same as running `toggle` and not finding specs. It doesn't have a key binding, but you can use `jasmine_create_spec` as a command name, like this:
+
+`{ "keys": ["KEYS"], "command": "jasmine_create_spec", "args": { "split_view": false } }`
+
+
+### Command Settings
+
+There are two possible settings:
+```json
+{
+    // Ignore directories when searching for files (source and specs)
+    "ignored_directories": [".git", "vendor", "tmp", "node_modules"],
+
+    // The parent folder name for the spec files
+    "jasmine_path": "spec"
+}
+```
+
+
 ## License
 The MIT License (MIT)
 

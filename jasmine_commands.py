@@ -17,7 +17,7 @@ class BaseCommand(sublime_plugin.TextCommand):
     def window(self):
         return self.view.window()
 
-class JasmineToggleCommand(BaseCommand):  
+class JasmineToggleCommand(BaseCommand):
     def _run(self, edit, split_view = False):
         file_type = self.file_type()
 
@@ -67,7 +67,7 @@ class JasmineToggleCommand(BaseCommand):
             dirnames[:] = [dirname for dirname in dirnames if dirname not in self.ignored_directories]
             yield dir, dirnames, files
 
-class JasmineCreateSpecCommand(BaseCommand):  
+class JasmineCreateSpecCommand(BaseCommand):
     def _run(self, edit, split_view = False):
         SpecFileInterface(self, split_view).interact()
 
