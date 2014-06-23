@@ -7,39 +7,48 @@ import functools
 class BaseCommand(sublime_plugin.TextCommand):
     def run(self, edit, split_view = False):
         self.load_settings()
-        self._run(edit, split_view)
+        self.create_base_spec_folder()
+        self.split_view = split_view
+        self._run(edit)
 
     def load_settings(self):
         settings = sublime.load_settings("Jasmine_BDD.sublime-settings")
         self.ignored_directories = settings.get("ignored_directories", [])
         self.jasmine_path = settings.get("jasmine_path", "spec")
 
+    def create_base_spec_folder(self):
+        base, _ = os.path.split(self.view.file_name())
+        for folder in self.window().folders():
+            spec_path = os.path.join(folder, self.jasmine_path)
+            if re.search(folder, base) and not os.path.exists(spec_path):
+                os.mkdir(spec_path)
+
     def window(self):
         return self.view.window()
 
 class JasmineToggleCommand(BaseCommand):
-    def _run(self, edit, split_view = False):
+    def _run(self, edit):
         file_type = self.file_type()
-
         if not file_type:
             return
 
-        possible_alternates = file_type.possible_alternate_files()
-        alternates = self.project_files(lambda file: file in possible_alternates)
-
-        for alternate in alternates:
-            if re.search(file_type.parent_dir_name(), alternate) and file_type.parent_dir_name() != self.jasmine_path:
-                alternates = [alternate]
-                break
-
+        alternates = self.reduce_alternatives(file_type)
         if alternates:
-            if split_view:
-                ShowPanels(self.window()).split()
             self.show_alternatives(alternates)
         else:
-            SpecFileInterface(self, split_view).interact()
+            SpecFileInterface(self).interact()
+
+    def reduce_alternatives(self, file_type):
+        alternates = self.project_files(lambda file: file in file_type.possible_alternate_files())
+        for alternate in alternates:
+            if re.search(file_type.parent_dir_name(), alternate):
+                alternates = [alternate]
+                break
+        return alternates
 
     def show_alternatives(self, alternates):
+        if self.split_view:
+            ShowPanels(self.window()).split()
         if len(alternates) == 1:
             self.window().open_file(alternates.pop())
         else:
@@ -68,8 +77,8 @@ class JasmineToggleCommand(BaseCommand):
             yield dir, dirnames, files
 
 class JasmineCreateSpecCommand(BaseCommand):
-    def _run(self, edit, split_view = False):
-        SpecFileInterface(self, split_view).interact()
+    def _run(self, edit):
+        SpecFileInterface(self).interact()
 
 ##
 # Classes
@@ -109,10 +118,9 @@ class JSFile(BaseFile):
 
 class JasmineFile(BaseFile):
     def possible_alternate_files(self):
-        return [
-            self.file_name.replace("_spec.js", ".js"),
-            self.file_name.replace(".spec.js", ".js")
-        ]
+        possible_set = set([self.file_name.replace("_spec.js", ".js"), self.file_name.replace(".spec.js", ".js")])
+        file_name_set = set([self.file_name])
+        return list(possible_set - file_name_set)
 
     @classmethod
     def test(cls, file_name):
@@ -123,12 +131,12 @@ class SpecFileInterface():
     full_torelative_paths = {}
     rel_path_start = 0
 
-    def __init__(self, command, split_view):
+    def __init__(self, command):
         self.ignored_directories = command.ignored_directories
         self.jasmine_path = command.jasmine_path
         self.window = command.window()
         self.current_file = command.view.file_name()
-        self.split_view = split_view
+        self.split_view = command.split_view
 
     def interact(self):
         self.build_relative_paths()
@@ -217,5 +225,5 @@ class SpecFileInterface():
         if not os.path.exists(base):
             parent = os.path.split(base)[0]
             if not os.path.exists(parent):
-                self.create_folder(parent)
+                self.create_folders(parent)
             os.mkdir(base)
