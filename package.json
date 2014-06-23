@@ -12,7 +12,8 @@
     "grunt-bump": "0.0.14"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "symlink": "ln -sF . ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/jasmine-snippets"
   },
   "repository": {
     "type": "git",
