@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "symlink": "ln -sF . ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/jasmine-snippets"
+    "symlink": "ln -sF `pwd` ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/jasmine-snippets"
   },
   "repository": {
     "type": "git",
