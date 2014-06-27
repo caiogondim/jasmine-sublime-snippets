@@ -82,21 +82,6 @@ triggers of each one. The **⇥** means the `TAB` key.
 - `createSpyObj`: cso⇥
 
 
-## Contributing
-
-* Fork this repository
-* Run `npm install`
-* Create a new branch for each feature or improvement
-* Ensure that your code is accompanied with tests
-* Run `grunt test` to ensure that your new tests and the old ones are all passing
-* Send a pull request from each feature branch
-
-If you're on a OS X machine, you can run `npm run-script symlink` to symlink
-this package directly to
-`~/Library/Application\ Support/Sublime\ Text\ 3/Packages/jasmine-snippets`
-and see the changes everytime you save a file.
-
-
 ## Commands
 
 ### Toggle between code and spec
@@ -126,7 +111,6 @@ There are two possible settings:
 ```
 
 
-=======
 ## Contributing
 
 * Fork this repository
@@ -140,6 +124,12 @@ If you're on a OS X machine, you can run `npm run-script symlink` to symlink
 this package directly to
 `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/jasmine-snippets`
 and see the changes everytime you save a file.
+
+### Contributors
+
+- [Nicolás Santángelo](https://github.com/NicoSantangelo)
+- [Breno Polanski](https://github.com/brenopolanski)
+- [Jesse Atkinson](https://github.com/jsatk)
 
 
 ## License
