@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+xit("${1:should behave...}", function() {
+	$2
+});]]>
+	</content>
+	<tabTrigger><![CDATA[xit]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>xit</description>
+</snippet>
