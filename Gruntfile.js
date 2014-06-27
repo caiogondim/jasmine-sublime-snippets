@@ -14,7 +14,8 @@ module.exports = function (grunt) {
     },
     bump: {
       options: {
-        pushTo: "origin"
+        pushTo: "origin",
+        tagName: "%VERSION%"
       }
     }
   })
