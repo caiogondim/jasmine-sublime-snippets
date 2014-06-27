@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+xdescribe("${1:Name of the group}", function() {
+	$2
+});]]>
+	</content>
+	<tabTrigger><![CDATA[xdesc]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>xdescribe</description>
+</snippet>

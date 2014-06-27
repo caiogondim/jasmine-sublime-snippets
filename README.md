@@ -27,6 +27,7 @@ triggers of each one. The **⇥** means the `TAB` key.
 
 ### Specs
 - `describe`: desc⇥
+- `xdescribe`: xdesc⇥
 - `it`: it⇥
 - `xit`: xit⇥
 - `afterEach`: ae⇥
