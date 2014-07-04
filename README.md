@@ -108,7 +108,7 @@ name, like this:
 ### Command Settings
 
 There are two possible settings:
-```json
+```javascript
 {
     // Ignore directories when searching for files (source and specs)
     "ignored_directories": [".git", "vendor", "tmp", "node_modules"],
